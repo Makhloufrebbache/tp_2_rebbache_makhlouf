@@ -1,0 +1,83 @@
+body{
+    background-color: rgb(121, 215, 129);
+}
+#form1{
+    text-align: center;
+  
+}
+.input_form1{
+width: 600px;
+height: 32px;
+text-align: center;
+border-radius: 5px;
+border-width: 0px;
+
+}
+.input_select_form1{
+width: 604px;
+height: 34px;
+text-align: center;
+border-radius: 5px;
+border-width: 0;
+
+}
+.label.form1{
+ font-weight: bol;
+ color: red;   
+}
+span{
+    font-weight: bold;
+   color: black;
+}
+#div1_form1{
+    padding-left:64px;
+   border: 0px;
+   
+}
+#div1_form2{
+    padding-left:0px;
+    margin-top: 4px;
+}
+#div1_form3{
+    padding-left:76px;
+    margin-top: 4px;
+}
+#div1_form4{
+    padding-left:76px;
+    margin-top: 4px;
+}
+#div1_form5{
+    padding-left:54px;
+    margin-top: 4px;
+}
+#tite_form1{
+    font-size: 22px;
+    color:black;
+    font-weight: bold;
+    margin-left: 100px;
+}
+#btn_submit{
+    width: 300px;
+    height: 34px;
+    margin-top: 10px;
+    margin-left: 100px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    border-width : 0;
+    border-radius: 3px;
+}
+#form0{
+    text-align: center;
+}
+#msg_error{
+   text-align: center; 
+   color: red;
+   font-size: 20px;
+   font-weight: bold;
+}
+#input_form0{
+width: 200px;
+height: 32px;
+}
