@@ -17,8 +17,8 @@ if(isset($_SESSION["Message_error_index"])){
 <div id="form0">
   <div id="msg_error"><label for=""> <?php echo $msg_erreur_index ?></label></div>
     <form  action="Formulaire_Saisie.php"  method="post">
-      <label for=""><span>Saisir le nombre d'adresses: </span></label> <input id="input_form0" type="text" name="nbr_adresse">
-      <button type="submit">Envoyer</button>
+     <input id="input_form0" type="text" name="nbr_adresse" placeholder="Veuillez saisir le nombre d'adresse">
+     <button id="btn_submit_0" type="submit">Envoyer</button>
     </form>
 </div>   
 </body>

@@ -1,11 +1,11 @@
 body{
     background-color: rgb(121, 215, 129);
 }
-#form1{
+#form1,#form0{
     text-align: center;
   
 }
-.input_form1{
+.input_form1,#input_form0{
 width: 600px;
 height: 32px;
 text-align: center;
@@ -21,8 +21,8 @@ border-radius: 5px;
 border-width: 0;
 
 }
-.label.form1{
- font-weight: bol;
+.label.form1,.label_form0{
+ font-weight: bold;
  color: red;   
 }
 span{
@@ -50,13 +50,13 @@ span{
     padding-left:54px;
     margin-top: 4px;
 }
-#tite_form1{
+#title_form1,#title_form0{
     font-size: 22px;
     color:black;
     font-weight: bold;
     margin-left: 100px;
 }
-#btn_submit{
+#btn_submit,#btn_submit1{
     width: 300px;
     height: 34px;
     margin-top: 10px;
@@ -69,15 +69,59 @@ span{
     border-radius: 3px;
 }
 #form0{
-    text-align: center;
+   /*text-align: center;*/
 }
 #msg_error{
-   text-align: center; 
-   color: red;
-   font-size: 20px;
    font-weight: bold;
+   color: red;
+   font-size: 15px;
+
 }
-#input_form0{
-width: 200px;
-height: 32px;
+#btn_submit_0{
+    width: 130px;
+    height: 35px;
+    margin-top: 10px;
+    margin-left: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    border-width : 0;
+    border-radius: 3px;
+}
+#div1_form0{
+    padding-left:65px;
+   border: 0px;
+   
+}
+#div2_form0{
+    padding-left:41px;
+    margin-top: 4px;
+}
+#div3_form0{
+    padding-left:76px;
+    margin-top: 4px;
+}
+#div4_form0{
+    padding-left:80px;
+    margin-top: 4px;
+}
+#div5_form0{
+    padding-left:77px;
+    margin-top: 4px;
+}
+#btn_retour{
+    width: 300px;
+    height: 34px;
+    margin-top: 10px;
+    margin-left: 100px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    border-width : 0;
+    border-radius: 3px;
+}
+#div_btn_retour{
+    text-align: center;
 }
