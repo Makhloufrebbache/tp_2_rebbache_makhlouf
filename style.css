@@ -1,7 +1,7 @@
 body{
-    background-color: rgb(121, 215, 129);
+    background-color: rgb(178 203 202);
 }
-#form1,#form0{
+#form2,#form1,#form0{
     text-align: center;
   
 }
@@ -10,7 +10,7 @@ width: 600px;
 height: 32px;
 text-align: center;
 border-radius: 5px;
-border-width: 0px;
+border-width: 0;
 
 }
 .input_select_form1{
@@ -18,7 +18,7 @@ width: 604px;
 height: 34px;
 text-align: center;
 border-radius: 5px;
-border-width: 0;
+border-width: 0px;
 
 }
 .label.form1,.label_form0{
@@ -55,20 +55,22 @@ span{
     color:black;
     font-weight: bold;
     margin-left: 100px;
+  
 }
 #btn_submit,#btn_submit1{
-    width: 300px;
+    width: 600px;
     height: 34px;
-    margin-top: 10px;
+    margin-top: 4px;
     margin-left: 100px;
     font-size: 17px;
     font-weight: bold;
     color: white;
     background-color: blue;
     border-width : 0;
-    border-radius: 3px;
+    border-radius: 5px;
+    margin-left: 120px;
 }
-#form0{
+#form2{
    /*text-align: center;*/
 }
 #msg_error{
@@ -79,13 +81,13 @@ span{
 }
 #btn_submit_0{
     width: 130px;
-    height: 35px;
+    height: 33px;
     margin-top: 10px;
     margin-left: 4px;
     font-size: 17px;
-    font-weight: bold;
-    color: white;
-    background-color: blue;
+   
+    background-color: white;
+    color: black;
     border-width : 0;
     border-radius: 3px;
 }
@@ -110,18 +112,29 @@ span{
     padding-left:77px;
     margin-top: 4px;
 }
-#btn_retour{
-    width: 300px;
+#div_btn_retour, #div_btn_retour_index{
+    width: 600px;
     height: 34px;
-    margin-top: 10px;
-    margin-left: 100px;
+    margin-top: 3px;
+    margin-left: 520px;
     font-size: 17px;
     font-weight: bold;
     color: white;
     background-color: blue;
     border-width : 0;
-    border-radius: 3px;
-}
-#div_btn_retour{
+    border-radius: 5px;
+    text-decoration: none;
     text-align: center;
+}
+a{
+text-decoration: none;
+}
+
+#msg_error_forms_saisie{
+    text-align: center;
+    color: red;
+}
+h2{
+    color: red;
+    margin-left: 100px;
 }
