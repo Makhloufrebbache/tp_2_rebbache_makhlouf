@@ -37,7 +37,7 @@ $borderColor='style = "border-color: red; border-width: 2px"';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Formulaire saisie</title>
 </head>
 <body>
@@ -57,7 +57,7 @@ $borderColor='style = "border-color: red; border-width: 2px"';
                           <input class="input_form1" text="" name="<?php echo "street_nb".$i ?>" value="<?php if (isset ($_SESSION["infos_streetnb_saisie$i"])) echo $_SESSION["infos_streetnb_saisie$i"]?>"  placeholder="Saisir le numéro de la rue"
                           <?php if (isset($_SESSION["infos_streetnb_saisie$i"]) && empty($_SESSION["infos_streetnb_saisie$i"])) echo $borderColor ?>>
     </div>
-    <div id="div1_form3"> <label for=""><span <?php if (isset($_SESSION["infos_type_saisie$i"]) && empty($_SESSION["infos_type_saisie$i"])) echo $errorColor ?> class="label_form1">type </span>  : </label>
+    <div id="div1_form3"> <label for=""><span <?php if (isset($_SESSION["infos_type_saisie$i"]) && empty($_SESSION["infos_type_saisie$i"])) echo $errorColor ?> class="label_form1">Adress type </span>  : </label>
                                <select name="<?php echo "type.$i" ?>" placeholder="Saisir le nom de la rue" class="input_select_form1"
                                              <?php if (isset($_SESSION["infos_type_saisie$i"]) && empty($_SESSION["infos_type_saisie$i"])) echo $borderColor ?>>
                                         <option value=<?php if (isset ($_SESSION["infos_type_saisie$i"])) echo $_SESSION["infos_type_saisie$i"];else echo "" ?>><?php if (isset ($_SESSION["infos_type_saisie$i"])) echo $_SESSION["infos_type_saisie$i"];else echo "Séléctionner le type" ?></option>
@@ -77,13 +77,13 @@ $borderColor='style = "border-color: red; border-width: 2px"';
                                         <option value="Manitoba">Manitoba</option>
                                 </select>
     </div>
-    <div id="div1_form5"> <label for=""><span <?php if (isset($_SESSION["infos_zipcode_saisie$i"]) && empty($_SESSION["infos_zipcode_saisie$i"])) echo $errorColor ?> class="label_form1">zipcode </span>  : </label>
+    <div id="div1_form5"> <label for=""><span <?php if (isset($_SESSION["infos_zipcode_saisie$i"]) && empty($_SESSION["infos_zipcode_saisie$i"])) echo $errorColor ?> class="label_form1">Zipe code </span>  : </label>
                           <input class="input_form1" text="" name="<?php echo "zipcode".$i?>" value="<?php if (isset ($_SESSION["infos_zipcode_saisie$i"])) echo $_SESSION["infos_zipcode_saisie$i"]?>" placeholder="Saisir le code postal"
                           <?php if (isset($_SESSION["infos_zipcode_saisie$i"]) && empty($_SESSION["infos_zipcode_saisie$i"])) echo $borderColor ?>>   
     </div>
     <?php } ?>
-    <button type="submit" id="btn_submit">Valider</button>
-    <a href="index.php"><div id="div_btn_retour_index">Retour </div></a>
+    <button type="submit" id="btn_submit">Valider</button><br>
+    <button id="btn_submit" formaction="index.php" >Retour</button>
 </form>
 
 </div>

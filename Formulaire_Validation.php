@@ -19,43 +19,51 @@ for ($i=0; $i <$nbr_forms_valid ; $i++) {
 if ($Msg_error_saisie["isValid"]==false ) { 
     $_SESSION["Msg_error_saisie"]=$Msg_error_saisie["msg"];
     header("Location: Formulaire_Saisie.php");
-  } 
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
+  }
+  ?>
+  
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Formulaire validation</title>
-</head>
-<body>
-<div id="msg_error_forms_saisie">
-<?php for ($i=0; $i < $nbr_forms_valid ; $i++) { 
-  //$Msg_error_saisie =  verifierDataFormsSaisie($_POST,$nbr_forms_valid );
- }?>
- </div>
-<div id="form2">
-<form action="traitement.php" method="post">
- <input hidden text="" name= "nbr_adresse_valid" value='<?php echo $nbr_forms_valid ?>'> 
-  <?php 
-   for ($i= 0; $i < $nbr_forms_valid; $i++) { ?>
-    <p  id="title_form0">Adresse N°: <?php echo $i+1?></p>
-    <div id="div1_form0"> <label for=""><span >Street:</span> </label> <input class="input_form1" name= "<?php echo "street".$i?>" value="<?php echo $_POST["street$i"] ?>"></div>
-    <div id="div2_form0"> <label for=""><span >Street_nb:</span></label> <input class="input_form1" name="<?php echo "street_nb".$i?>" value="<?php echo $_POST["street_nb$i"] ?>" ></div>
-    <div id="div3_form0"> <label for=""><span >Type:</span></label> <input class="input_form1" name="<?php echo "type".$i?>" value="<?php echo $_POST["type_$i"] ?>" ></div>
-    <div id="div4_form0"> <label for=""><span >City:</span></label> <input class="input_form1" name="<?php echo "city".$i?>" value="<?php echo $_POST["city_$i"] ?>"?></div>
-    <div id="div5_form0"> <label for=""><span >Zipe:</span> </label> <input class="input_form1" name="<?php echo "zipcode".$i ?>" value="<?php echo $_POST["zipcode$i"] ?>"></div>
-    <?php } ?>
-    <button id="btn_submit1" type="submit">Enregistrer</button> 
-    <a href="./Formulaire_Saisie.php"><div id="div_btn_retour">Modifier</div></a>
-</form>
-</div>   
-</body>
-</html>
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="script/script.js"></script>
+    <title>Formulaire de validation</title>
+   </head>
+    <body>
+    <div class="container">
+        <form >
+          <table >
+            <tr>
+               <th>N° Adresse</th>
+               <th>Street</th>
+               <th>Street number</th>
+               <th>Type</th>
+               <th>Cité</th>
+               <th>Zipe Code</th>
+            </tr>
+             <?php for ($i = 0; $i < $nbr_forms_valid; $i++) {?>
+            <tr>
+               <td ><?php echo $i+1; ?></td>
+               <td ><?php echo $_POST["street$i"] ?></td>
+               <td><?php echo $_POST['street_nb'.$i] ?></td>
+               <td><?php echo $_POST["type_$i"] ?></td>
+               <td><?php echo $_POST["city_$i"] ?></td>
+               <td><?php echo $_POST["zipcode$i"] ?></td>
+            </tr>
+             <?php } ?>
+          </table>
+        <div id="btn">
+         <button id="btn_modify" formaction="Formulaire_Saisie.php">Modifier</button>
+         <button id="btn_save"  formaction="traitement.php" >Sauvegarder</button>
+         
+        </div>
+        </form>
+    </div>
+
+   </body>
+   </html>
 
 
 
- 

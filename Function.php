@@ -23,41 +23,14 @@ function endchain($chaine_de_caractere) {
     }
     return $Msg;
    } 
-   /* fonction pour concroler la saisie de la page de saisie */
-   function verifierDataFormsSaisie1($data,$nbr){
-                 echo "Les champs suivant ne sont pas renseignés:";
-                 echo "</br>";
-      for ($i=0; $i <$nbr ; $i++) { 
-            
-               if (empty($data["street$i"])) {
-                 echo "Erreur: Le champs street de formulaire de saisie N° ".$i." ";
-                 echo "</br>";
-                }
-              if (empty($data["street_nb$i"])) {
-                 echo "Erreur: Le champs street_nb de formulaire".$i." est vide";
-                 echo "</br>";
-                }
-                if (empty($data["type_$i"])) {
-                 echo "Erreur: Le champs type de formulaire".$i." est vide";
-                 echo "</br>";
-                }
-                if (empty($data["city_$i"])) {
-                 echo "Erreur: Le champs city de formulaire".$i." est vide";
-                 echo "</br>";
-                }
-                if (empty($data["zipcode$i"])) {
-                 echo "Erreur: Le champs zipcode de formulaire".$i." est vide";
-                 echo "</br>";
-                }
-       }
-    }  
+  
  /* fonction pour concroler la saisie de la page de saisie */
     function verifierDataFormsSaisie($data,$nbr){
       $Msg=[];
         for ($i=0; $i <$nbr ; $i++) { 
            if (empty($data["street$i"])||empty($data["street_nb$i"])||(empty($data["zipcode$i"]))) {
-            $Msg =['isValid' => false,'msg'=>'Erreur: un ou plusieur champs sont vide.'];  
-             
+            $Msg =['isValid' => false,'msg'=>'Erreur: un ou plusieurs champs sont vide, veuillez remplir tous les champs.'];  
+
           }
           else{
             $Msg =['isValid' => true,'msg'=>'Erreur: tous les champs sont remplis.']; 
