@@ -1,8 +1,10 @@
 <?php
 
 require_once("Function.php");
+//Récuprer le nombre de formulaire.
 $nbr_forms_valid = $_POST["nbr_adresse_valid"];
-//Affecter les valeurs des champs envoyé par le formulaire de sasie dans des variables de session, afin de pouvoir les renvoyer à nouveau.
+/*Affecter les valeurs du tableau $_POST envoyé par formulaire de saisie dans des variables de session pour pouvoir
+les récupérer à nouveau pour modification.*/
 session_start();
 for ($i=0; $i <$nbr_forms_valid ; $i++) { 
     $_SESSION["infos_street_saisie$i"]=$_POST["street$i"];
@@ -10,11 +12,10 @@ for ($i=0; $i <$nbr_forms_valid ; $i++) {
     $_SESSION["infos_type_saisie$i"]=$_POST["type_$i"];
     $_SESSION["infos_city_saisie$i"]=$_POST["city_$i"];
     $_SESSION["infos_zipcode_saisie$i"]=$_POST["zipcode$i"];
-
 } 
     $_SESSION["retour_validation"]=$_POST["retour_validation"];
     $_SESSION["nbr_adresse_valid"]=$_POST["nbr_adresse_valid"];
-// Récupérer le message d'érreur et de l'affecter à une variable de session afin de le récupérer dans le formulaire de saise 
+// Récupérer le message d'érreur et de l'affecter à une variable de session afin de le récupérer dans le formulaire de saise. 
     $Msg_error_saisie = verifierDataFormsSaisie($_POST,$nbr_forms_valid );
 if ($Msg_error_saisie["isValid"]==false ) { 
     $_SESSION["Msg_error_saisie"]=$Msg_error_saisie["msg"];
@@ -34,6 +35,8 @@ if ($Msg_error_saisie["isValid"]==false ) {
     <body>
     <div class="container">
         <form >
+<!-- Récuprer les adresses saisie dans un tableau  -->
+      <h2>Liste adresses</h2>
           <table >
             <tr>
                <th>N° Adresse</th>

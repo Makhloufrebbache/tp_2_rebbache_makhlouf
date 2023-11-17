@@ -1,7 +1,7 @@
 <?php
 require_once("Function.php");
  session_start();
-//  Récupérer le nombre de formuaire a crées
+//  Récupérer le nombre de formulaires à crées ou déja crées dans le cas d'une modification dans la variable $nbr_forms.
 if (isset($_SESSION["retour_validation"])){
      $nbr_forms=$_SESSION["nbr_adresse_valid"];
 }
@@ -10,19 +10,22 @@ else{
 }
 ?>
 <?php
-// Récupérer le message d'érreur et de l'affecter à une variable de session afin de le récupérer dans l'index 
+// Récupérer le résultat de la fonction --verifierDataFormsNbr-- dans la variable --$Msg_error_index--
 $Msg_error_index=verifierDataFormsNbr($nbr_forms);
+// Tester la validité de la valeur saisie dans le formulaire index.
 if ($Msg_error_index["isValid"]==false ) { 
+// Tester si on n'est pas dans la modification afin d'éviter le retour automatique à l'index.
   if (!($_SESSION["retour_validation"])){
   $_SESSION["Message_error_index"]= $Msg_error_index["msg"];
     header("Location: index.php");
   }
 }
+// Initialisation de la variable de session à vide dans le cas ou aucune erreur n'a été détectée.
 else{
    $_SESSION["Message_error_index"]= "";
 }
 
-//Controle de formuaire de saisie afin de l'envoyer à la validation
+// Donner du style aux déffirents messages et récupérer le message d'erreur.
 $error="";
  $errorColor="";
 if (isset ($_SESSION["Msg_error_saisie"])){
@@ -41,6 +44,7 @@ $borderColor='style = "border-color: red; border-width: 2px"';
   <title>Formulaire saisie</title>
 </head>
 <body>
+  <!--formulaire de saisie et de modification au méme temps pour les adresses -->
 <div id="form1">
 <form action="Formulaire_validation.php" method="post">
   <h2><?php echo $error ?></h2>
